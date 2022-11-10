@@ -233,17 +233,29 @@ class _MyFormPageState extends State<MyFormPage> {
                                       shrinkWrap: true,
                                       children: <Widget>[
                                         const Center(
-                                            child: Text('Informasi Data')),
-                                        const SizedBox(height: 20),
+                                            child: Text('Informasi Data',
+                                                style: TextStyle(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.bold))),
+                                        const SizedBox(height: 30),
                                         Center(
                                           child: Column(children: [
-                                            Text('Nama:  $_namaLengkap'),
-                                            // Text('Jenjang:  $_'),
+                                            Text(
+                                                'Nama Lengkap:  $_namaLengkap'),
+                                            SizedBox(height: 20),
+                                            Text(
+                                                'Jenjang:  ${jenjangSarjana ? 'Sarjana' : jenjangDiploma ? 'Diploma' : jenjangMagister ? 'Magister' : jenjangDoktor ? 'Doktor' : 'Tidak ada'}'),
+                                            SizedBox(height: 20),
                                             Text('Umur:  $umur'),
+                                            SizedBox(height: 20),
                                             Text('Kelas:  $kelasPBP'),
-                                            Text('Practice:  $_nilaiSwitch')
+                                            SizedBox(height: 20),
+                                            Text(
+                                                'Practice Mode:  $_nilaiSwitch')
                                           ]),
                                         ),
+                                        const SizedBox(height: 30),
                                         TextButton(
                                           onPressed: () {
                                             Navigator.pop(context);
